@@ -61,11 +61,6 @@
     return self;
 }
 
-- (void) handlesDidPickColor:(DTColorPickerHandler)handler
-{
-    _handler = Block_copy(handler);
-}
-
 - (void)dealloc
 {
     if (_handler != nil) {
@@ -73,6 +68,15 @@
     }
     
     [super dealloc];
+}
+
+- (void)handlesDidPickColor:(DTColorPickerHandler)handler
+{
+    if (_handler != nil) {
+        Block_release(_handler);
+    }
+    
+    _handler = Block_copy(handler);
 }
 
 #pragma mark - Touch events
