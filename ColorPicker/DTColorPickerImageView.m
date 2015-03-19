@@ -8,8 +8,12 @@
 
 #import "DTColorPickerImageView.h"
 #import "UIImage+ColorPicker.h"
+
 @interface DTColorPickerImageView()
-@property (copy) DTColorPickerHandler handler;
+{
+    DTColorPickerHandler _handler;
+}
+
 @end
 
 @implementation DTColorPickerImageView
@@ -26,10 +30,6 @@
     DTColorPickerImageView *colorPicker = [[DTColorPickerImageView alloc] initWithImage:image];
     
     return [colorPicker autorelease];
-}
-
--(void) handlesDidPickColor:(DTColorPickerHandler)handler {
-    self.handler = handler;
 }
 
 #pragma mark - Instance Methods
@@ -61,6 +61,20 @@
     return self;
 }
 
+- (void) handlesDidPickColor:(DTColorPickerHandler)handler
+{
+    _handler = Block_copy(handler);
+}
+
+- (void)dealloc
+{
+    if (_handler != nil) {
+        Block_release(_handler);
+    }
+    
+    [super dealloc];
+}
+
 #pragma mark - Touch events
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -86,8 +100,18 @@
 - (void)pickerColorAtPoint:(CGPoint)point
 {
     CGPoint convertPoint = [self.image convertPoint:point fromImageView:self];
+    
     UIColor *color = [self.image pickColorWithPoint:convertPoint];
-    self.handler(color);
+    
+    if (_handler != nil) {
+        _handler(color);
+        
+        return;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(imageView:didPickColorWithColor:)]) {
+        [self.delegate imageView:self didPickColorWithColor:color];
+    }
 }
 
 @end

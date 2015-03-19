@@ -9,9 +9,24 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^DTColorPickerHandler)(UIColor *color);
+
+@protocol DTColorPickerImageViewDelegate;
+
 @interface DTColorPickerImageView : UIImageView
+
+@property (assign) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
+
 + (instancetype)colorPickerWithFrame:(CGRect)frame;
 + (instancetype)colorPickerWithImage:(UIImage *)image;
+
+// When handler and delegate not nil, will handler respondes first.
 - (void)handlesDidPickColor:(DTColorPickerHandler)handler;
+
 @end
 
+@protocol DTColorPickerImageViewDelegate <NSObject>
+
+@optional
+- (void)imageView:(DTColorPickerImageView *)imageView didPickColorWithColor:(UIColor *)color;
+
+@end
