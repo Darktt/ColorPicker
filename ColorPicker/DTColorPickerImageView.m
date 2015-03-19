@@ -11,6 +11,22 @@
 
 @implementation DTColorPickerImageView
 
++ (instancetype)colorPickerWithFrame:(CGRect)frame
+{
+    DTColorPickerImageView *colorPicker = [[DTColorPickerImageView alloc] initWithFrame:frame];
+    
+    return [colorPicker autorelease];
+}
+
++ (instancetype)colorPickerWithImage:(UIImage *)image
+{
+    DTColorPickerImageView *colorPicker = [[DTColorPickerImageView alloc] initWithImage:image];
+    
+    return [colorPicker autorelease];
+}
+
+#pragma mark - Instance Methods
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -21,6 +37,16 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    if (self == nil) return nil;
+    
+    [self setUserInteractionEnabled:YES];
+    
+    return self;
+}
+
+- (instancetype)initWithImage:(UIImage *)image
+{
+    self = [super initWithImage:image];
     if (self == nil) return nil;
     
     [self setUserInteractionEnabled:YES];

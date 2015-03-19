@@ -12,7 +12,10 @@
 
 @interface DTColorPickerImageView : UIImageView
 
-@property (weak) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
+@property (assign) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
+
++ (instancetype)colorPickerWithFrame:(CGRect)frame;
++ (instancetype)colorPickerWithImage:(UIImage *)image;
 
 @end
 

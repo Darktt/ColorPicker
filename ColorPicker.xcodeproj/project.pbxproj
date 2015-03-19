@@ -14,8 +14,8 @@
 		523951071ABAC582008F2625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523951061ABAC582008F2625 /* Images.xcassets */; };
 		5239510A1ABAC582008F2625 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523951081ABAC582008F2625 /* LaunchScreen.xib */; };
 		523951161ABAC582008F2625 /* ColorPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951151ABAC582008F2625 /* ColorPickerTests.m */; };
-		523951271ABAC766008F2625 /* DTColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951261ABAC766008F2625 /* DTColorPickerImageView.m */; };
-		5239512A1ABAD5AB008F2625 /* UIImage+ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951291ABAD5AB008F2625 /* UIImage+ColorPicker.m */; };
+		523951271ABAC766008F2625 /* DTColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951261ABAC766008F2625 /* DTColorPickerImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5239512A1ABAD5AB008F2625 /* UIImage+ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951291ABAD5AB008F2625 /* UIImage+ColorPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
