@@ -54,6 +54,16 @@
     return self;
 }
 
+#pragma mark - Touch events
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    [self pickerColorAtPoint:location];
+}
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -63,7 +73,12 @@
         return;
     }
     
-    CGPoint convertPoint = [self.image convertPoint:location fromImageView:self];
+    [self pickerColorAtPoint:location];
+}
+
+- (void)pickerColorAtPoint:(CGPoint)point
+{
+    CGPoint convertPoint = [self.image convertPoint:point fromImageView:self];
     
     UIColor *color = [self.image pickColorWithPoint:convertPoint];
     
