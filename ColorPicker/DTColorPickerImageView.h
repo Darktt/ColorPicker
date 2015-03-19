@@ -8,19 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol DTColorPickerImageViewDelegate;
-
+typedef void(^DTColorPickerHandler)(UIColor *color);
 @interface DTColorPickerImageView : UIImageView
-
-@property (assign) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
-
 + (instancetype)colorPickerWithFrame:(CGRect)frame;
 + (instancetype)colorPickerWithImage:(UIImage *)image;
-
+- (void)handlesDidPickColor:(DTColorPickerHandler)handler;
 @end
 
-@protocol DTColorPickerImageViewDelegate <NSObject>
-
-- (void)imageView:(DTColorPickerImageView *)imageView didPickColorWithColor:(UIColor *)color;
-
-@end
