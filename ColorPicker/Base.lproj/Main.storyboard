@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xf-MS-3sc">
+                                <rect key="frame" x="0.0" y="20" width="320" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picked Color -&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-Q2-vYQ">
+                                        <rect key="frame" x="14" y="30" width="121" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVu-vf-uQv">
+                                        <rect key="frame" x="160" y="15" width="150" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="6Mm-zu-SGf"/>
+                                            <constraint firstAttribute="height" constant="50" id="khv-5q-9f4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NVu-vf-uQv" firstAttribute="leading" secondItem="fqy-Q2-vYQ" secondAttribute="trailing" constant="25" id="0BR-6m-8iX"/>
+                                    <constraint firstAttribute="trailing" secondItem="NVu-vf-uQv" secondAttribute="trailing" constant="10" id="GIb-Tr-FOz"/>
+                                    <constraint firstAttribute="centerY" secondItem="fqy-Q2-vYQ" secondAttribute="centerY" id="K0G-cY-oew"/>
+                                    <constraint firstAttribute="centerY" secondItem="NVu-vf-uQv" secondAttribute="centerY" id="Qbc-Nm-NWn"/>
+                                    <constraint firstAttribute="height" constant="80" id="XgZ-6t-9XW"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fontcolor_bar" translatesAutoresizingMaskIntoConstraints="NO" id="Kd1-rG-0jY" customClass="DTColorPickerImageView">
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="aF9-gh-2D4"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kd1-rG-0jY" secondAttribute="bottom" id="2LE-bp-pps"/>
+                            <constraint firstAttribute="trailing" secondItem="5xf-MS-3sc" secondAttribute="trailing" id="77K-yD-aA3"/>
+                            <constraint firstItem="Kd1-rG-0jY" firstAttribute="top" secondItem="5xf-MS-3sc" secondAttribute="bottom" id="DJb-BM-8sr"/>
+                            <constraint firstItem="5xf-MS-3sc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IXM-gC-DSH"/>
+                            <constraint firstItem="5xf-MS-3sc" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="RNk-xw-bHQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Kd1-rG-0jY" secondAttribute="trailing" id="RPr-67-qxW"/>
+                            <constraint firstItem="Kd1-rG-0jY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vcr-jK-VQz"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="colorPreviewView" destination="NVu-vf-uQv" id="6Cz-Y9-Nuz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fontcolor_bar" width="284" height="76"/>
+    </resources>
+</document>
