@@ -94,6 +94,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:self];
     
+    // Respondes when point in self bounds.
     if (!CGRectContainsPoint(self.bounds, location)) {
         return;
     }

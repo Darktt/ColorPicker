@@ -45,6 +45,9 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fontcolor_bar" translatesAutoresizingMaskIntoConstraints="NO" id="Kd1-rG-0jY" customClass="DTColorPickerImageView">
                                 <rect key="frame" x="0.0" y="100" width="320" height="468"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="z5E-AA-Krp"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +64,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="colorPreviewView" destination="NVu-vf-uQv" id="6Cz-Y9-Nuz"/>
-                        <outlet property="pickerImgView" destination="Kd1-rG-0jY" id="5Od-Zh-avi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
