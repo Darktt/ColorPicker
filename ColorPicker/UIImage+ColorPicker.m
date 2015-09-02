@@ -24,7 +24,7 @@
         CGDataProviderRef provider = CGImageGetDataProvider(cgImage);
         CFDataRef bitmapData = CGDataProviderCopyData(provider);
         
-        const UInt8* data = CFDataGetBytePtr(bitmapData);
+        const UInt8 *data = CFDataGetBytePtr(bitmapData);
         
         size_t offset = ((width * y) + x) * 4;
         
