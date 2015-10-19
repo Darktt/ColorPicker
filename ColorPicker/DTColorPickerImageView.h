@@ -15,10 +15,10 @@ typedef void(^DTColorPickerHandler)(UIColor *__nonnull color);
 NS_ASSUME_NONNULL_BEGIN
 @interface DTColorPickerImageView : UIImageView
 
-@property (assign) IBOutlet id<DTColorPickerImageViewDelegate> __nullable delegate;
+@property (assign, nullable) IBOutlet id<DTColorPickerImageViewDelegate> delegate;
 
 + (instancetype)colorPickerWithFrame:(CGRect)frame;
-+ (instancetype)colorPickerWithImage:(UIImage * __nullable)image;
++ (instancetype)colorPickerWithImage:(nullable UIImage *)image;
 
 // When handler and delegate not nil, will handler respondes first.
 - (void)handlesDidPickColor:(DTColorPickerHandler)handler;
