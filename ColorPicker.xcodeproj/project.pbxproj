@@ -14,8 +14,8 @@
 		523951071ABAC582008F2625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523951061ABAC582008F2625 /* Images.xcassets */; };
 		5239510A1ABAC582008F2625 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523951081ABAC582008F2625 /* LaunchScreen.xib */; };
 		523951161ABAC582008F2625 /* ColorPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951151ABAC582008F2625 /* ColorPickerTests.m */; };
-		523951271ABAC766008F2625 /* DTColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951261ABAC766008F2625 /* DTColorPickerImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5239512A1ABAD5AB008F2625 /* UIImage+ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951291ABAD5AB008F2625 /* UIImage+ColorPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		526762A71BFEB4D500F1E914 /* UIImageColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526762A61BFEB4D500F1E914 /* UIImageColorPicker.swift */; };
+		526762A91BFEC0BD00F1E914 /* DTColorPickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526762A81BFEC0BD00F1E914 /* DTColorPickerImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,9 @@
 		5239510F1ABAC582008F2625 /* ColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523951141ABAC582008F2625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523951151ABAC582008F2625 /* ColorPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerTests.m; sourceTree = "<group>"; };
-		523951251ABAC766008F2625 /* DTColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTColorPickerImageView.h; sourceTree = "<group>"; };
-		523951261ABAC766008F2625 /* DTColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTColorPickerImageView.m; sourceTree = "<group>"; };
-		523951281ABAD5AB008F2625 /* UIImage+ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorPicker.h"; sourceTree = "<group>"; };
-		523951291ABAD5AB008F2625 /* UIImage+ColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorPicker.m"; sourceTree = "<group>"; };
+		526762A51BFEB4D400F1E914 /* ColorPicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorPicker-Bridging-Header.h"; sourceTree = "<group>"; };
+		526762A61BFEB4D500F1E914 /* UIImageColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageColorPicker.swift; sourceTree = "<group>"; };
+		526762A81BFEC0BD00F1E914 /* DTColorPickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTColorPickerImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +86,8 @@
 		523950F81ABAC582008F2625 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				523951281ABAD5AB008F2625 /* UIImage+ColorPicker.h */,
-				523951291ABAD5AB008F2625 /* UIImage+ColorPicker.m */,
-				523951251ABAC766008F2625 /* DTColorPickerImageView.h */,
-				523951261ABAC766008F2625 /* DTColorPickerImageView.m */,
+				526762A41BFEB49500F1E914 /* DTColorPicker-Swift */,
+				526762A51BFEB4D400F1E914 /* ColorPicker-Bridging-Header.h */,
 				523950FD1ABAC582008F2625 /* AppDelegate.h */,
 				523950FE1ABAC582008F2625 /* AppDelegate.m */,
 				523951001ABAC582008F2625 /* ViewController.h */,
@@ -127,6 +124,16 @@
 				523951141ABAC582008F2625 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		526762A41BFEB49500F1E914 /* DTColorPicker-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				526762A61BFEB4D500F1E914 /* UIImageColorPicker.swift */,
+				526762A81BFEC0BD00F1E914 /* DTColorPickerImageView.swift */,
+			);
+			name = "DTColorPicker-Swift";
+			path = ../DTColorPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +180,7 @@
 		523950EE1ABAC582008F2625 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Darktt;
 				TargetAttributes = {
@@ -229,11 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523951271ABAC766008F2625 /* DTColorPickerImageView.m in Sources */,
 				523951021ABAC582008F2625 /* ViewController.m in Sources */,
-				5239512A1ABAD5AB008F2625 /* UIImage+ColorPicker.m in Sources */,
 				523950FF1ABAC582008F2625 /* AppDelegate.m in Sources */,
+				526762A91BFEC0BD00F1E914 /* DTColorPickerImageView.swift in Sources */,
 				523950FC1ABAC582008F2625 /* main.m in Sources */,
+				526762A71BFEB4D500F1E914 /* UIImageColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +364,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ColorPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Darktt.personalCompany.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Darktt.ColorPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorPicker/ColorPicker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -367,10 +379,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ColorPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Darktt.personalCompany.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Darktt.ColorPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorPicker/ColorPicker-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -378,10 +393,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -398,10 +409,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ColorPickerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Darktt.personalCompany.$(PRODUCT_NAME:rfc1034identifier)";

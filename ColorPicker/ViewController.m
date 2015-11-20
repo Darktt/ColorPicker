@@ -2,12 +2,12 @@
 //  ViewController.m
 //  ColorPicker
 //
-//  Created by EdenLi on 2015/3/19.
+//  Created by Darktt on 2015/3/19.
 //  Copyright (c) 2015年 Darktt. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "DTColorPickerImageView.h"
+#import "ColorPicker-Swift.h"
 
 @interface ViewController () <DTColorPickerImageViewDelegate>
 
@@ -21,6 +21,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
