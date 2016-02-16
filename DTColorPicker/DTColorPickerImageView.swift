@@ -20,20 +20,20 @@ public class DTColorPickerImageView: UIImageView
     
     private var handler: DTColorPickerHandler?
     
-    override public func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         
         self.userInteractionEnabled = true
     }
     
-    override public init(frame: CGRect)
+    public override init(frame: CGRect)
     {
         super.init(frame: frame)
         
         self.userInteractionEnabled = true
     }
     
-    override public init(image: UIImage?)
+    public override init(image: UIImage?)
     {
         super.init(image: image)
         
@@ -45,9 +45,9 @@ public class DTColorPickerImageView: UIImageView
         super.init(image: image, highlightedImage: highlightedImage)
     }
 
-    required public init?(coder aDecoder: NSCoder)
+    public required init?(coder aDecoder: NSCoder)
     {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     /**
