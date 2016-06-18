@@ -20,7 +20,8 @@ public class DTColorPickerImageView: UIImageView
     
     private var handler: DTColorPickerHandler?
     
-    public override func awakeFromNib() {
+    public override func awakeFromNib()
+    {
         super.awakeFromNib()
         
         self.userInteractionEnabled = true
@@ -43,11 +44,13 @@ public class DTColorPickerImageView: UIImageView
     private override init(image: UIImage?, highlightedImage: UIImage?)
     {
         super.init(image: image, highlightedImage: highlightedImage)
+        
+        self.userInteractionEnabled = true
     }
 
     public required init?(coder aDecoder: NSCoder)
     {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     /**
@@ -64,11 +67,10 @@ public class DTColorPickerImageView: UIImageView
     
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        guard let _ = touches.first else {
+        guard let touch: UITouch = touches.first else {
             return
         }
         
-        let touch: UITouch = touches.first!
         let location: CGPoint = touch.locationInView(self)
         
         self.pickerColor(atPoint: location)
@@ -76,11 +78,10 @@ public class DTColorPickerImageView: UIImageView
     
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        guard let _ = touches.first else {
+        guard let touch: UITouch = touches.first else {
             return
         }
         
-        let touch: UITouch = touches.first!
         let location: CGPoint = touch.locationInView(self)
         
         // Respondes when point in self bounds.
@@ -95,13 +96,13 @@ public class DTColorPickerImageView: UIImageView
     
     private func pickerColor(atPoint point: CGPoint) -> Void
     {
-        guard let _ = self.image else {
+        guard let image: UIImage = self.image else {
             return
         }
         
-        let convertPoint: CGPoint = self.image!.convertPoint(point, fromImageView: self)
+        let convertPoint: CGPoint = image.convertPoint(point, fromImageView: self)
         
-        let color: UIColor = self.image!.pickColor(fromPoint: convertPoint)
+        let color: UIColor = image.pickColor(fromPoint: convertPoint)
         
         if let handler = self.handler {
             handler(color: color)
@@ -109,7 +110,7 @@ public class DTColorPickerImageView: UIImageView
         }
         
         if let delegate = self.delegate {
-            if delegate.respondsToSelector("imageView:didPickColorWithColor:") {
+            if delegate.respondsToSelector(#selector(DTColorPickerImageViewDelegate.imageView(_:didPickColorWithColor:))) {
                 delegate.imageView!(self, didPickColorWithColor: color)
             }
         }

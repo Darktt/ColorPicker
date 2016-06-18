@@ -7,25 +7,24 @@
 
 import UIKit
 
-extension UIImage
+public extension UIImage
 {
     public func pickColor(fromPoint point: CGPoint) -> UIColor
     {
-        guard let _ = self.CGImage else {
+        guard let CGImage: CGImageRef = self.CGImage else {
             return UIColor.blackColor()
         }
         
         var color: UIColor = UIColor.blackColor()
         
-        let cgImage: CGImageRef = self.CGImage!
-        let width: Int = CGImageGetWidth(cgImage)
-        let height: Int = CGImageGetHeight(cgImage)
+        let width: Int = CGImageGetWidth(CGImage)
+        let height: Int = CGImageGetHeight(CGImage)
         
         let x: Int = Int(floor(point.x) * self.scale)
         let y: Int = Int(floor(point.y) * self.scale)
         
         if (x < width) && (y < height) {
-            let provider: CGDataProviderRef = CGImageGetDataProvider(cgImage)!
+            let provider: CGDataProviderRef = CGImageGetDataProvider(CGImage)!
             
             if let bitmapData: CFDataRef = CGDataProviderCopyData(provider) {
                 let data: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmapData)

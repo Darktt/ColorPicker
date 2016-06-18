@@ -13,20 +13,9 @@
 		523951051ABAC582008F2625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523951031ABAC582008F2625 /* Main.storyboard */; };
 		523951071ABAC582008F2625 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523951061ABAC582008F2625 /* Images.xcassets */; };
 		5239510A1ABAC582008F2625 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523951081ABAC582008F2625 /* LaunchScreen.xib */; };
-		523951161ABAC582008F2625 /* ColorPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 523951151ABAC582008F2625 /* ColorPickerTests.m */; };
 		526762A71BFEB4D500F1E914 /* UIImageColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526762A61BFEB4D500F1E914 /* UIImageColorPicker.swift */; };
 		526762A91BFEC0BD00F1E914 /* DTColorPickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526762A81BFEC0BD00F1E914 /* DTColorPickerImageView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		523951101ABAC582008F2625 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 523950EE1ABAC582008F2625 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 523950F51ABAC582008F2625;
-			remoteInfo = ColorPicker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		523950F61ABAC582008F2625 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,9 +28,6 @@
 		523951041ABAC582008F2625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		523951061ABAC582008F2625 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		523951091ABAC582008F2625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5239510F1ABAC582008F2625 /* ColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		523951141ABAC582008F2625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		523951151ABAC582008F2625 /* ColorPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerTests.m; sourceTree = "<group>"; };
 		526762A51BFEB4D400F1E914 /* ColorPicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorPicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		526762A61BFEB4D500F1E914 /* UIImageColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageColorPicker.swift; sourceTree = "<group>"; };
 		526762A81BFEC0BD00F1E914 /* DTColorPickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTColorPickerImageView.swift; sourceTree = "<group>"; };
@@ -55,13 +41,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5239510C1ABAC582008F2625 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				523950F81ABAC582008F2625 /* ColorPicker */,
-				523951121ABAC582008F2625 /* ColorPickerTests */,
 				523950F71ABAC582008F2625 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				523950F61ABAC582008F2625 /* ColorPicker.app */,
-				5239510F1ABAC582008F2625 /* ColorPickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,23 +82,6 @@
 			children = (
 				523950FA1ABAC582008F2625 /* Info.plist */,
 				523950FB1ABAC582008F2625 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		523951121ABAC582008F2625 /* ColorPickerTests */ = {
-			isa = PBXGroup;
-			children = (
-				523951151ABAC582008F2625 /* ColorPickerTests.m */,
-				523951131ABAC582008F2625 /* Supporting Files */,
-			);
-			path = ColorPickerTests;
-			sourceTree = "<group>";
-		};
-		523951131ABAC582008F2625 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				523951141ABAC582008F2625 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,24 +116,6 @@
 			productReference = 523950F61ABAC582008F2625 /* ColorPicker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5239510E1ABAC582008F2625 /* ColorPickerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5239511C1ABAC582008F2625 /* Build configuration list for PBXNativeTarget "ColorPickerTests" */;
-			buildPhases = (
-				5239510B1ABAC582008F2625 /* Sources */,
-				5239510C1ABAC582008F2625 /* Frameworks */,
-				5239510D1ABAC582008F2625 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				523951111ABAC582008F2625 /* PBXTargetDependency */,
-			);
-			name = ColorPickerTests;
-			productName = ColorPickerTests;
-			productReference = 5239510F1ABAC582008F2625 /* ColorPickerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,10 +128,6 @@
 				TargetAttributes = {
 					523950F51ABAC582008F2625 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					5239510E1ABAC582008F2625 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 523950F51ABAC582008F2625;
 					};
 				};
 			};
@@ -207,7 +145,6 @@
 			projectRoot = "";
 			targets = (
 				523950F51ABAC582008F2625 /* ColorPicker */,
-				5239510E1ABAC582008F2625 /* ColorPickerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,13 +157,6 @@
 				523951051ABAC582008F2625 /* Main.storyboard in Resources */,
 				5239510A1ABAC582008F2625 /* LaunchScreen.xib in Resources */,
 				523951071ABAC582008F2625 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5239510D1ABAC582008F2625 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,23 +175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5239510B1ABAC582008F2625 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				523951161ABAC582008F2625 /* ColorPickerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		523951111ABAC582008F2625 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 523950F51ABAC582008F2625 /* ColorPicker */;
-			targetProxy = 523951101ABAC582008F2625 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		523951031ABAC582008F2625 /* Main.storyboard */ = {
@@ -389,34 +303,6 @@
 			};
 			name = Release;
 		};
-		5239511D1ABAC582008F2625 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ColorPickerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Darktt.personalCompany.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPicker.app/ColorPicker";
-			};
-			name = Debug;
-		};
-		5239511E1ABAC582008F2625 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ColorPickerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Darktt.personalCompany.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPicker.app/ColorPicker";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,15 +320,6 @@
 			buildConfigurations = (
 				5239511A1ABAC582008F2625 /* Debug */,
 				5239511B1ABAC582008F2625 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5239511C1ABAC582008F2625 /* Build configuration list for PBXNativeTarget "ColorPickerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5239511D1ABAC582008F2625 /* Debug */,
-				5239511E1ABAC582008F2625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
