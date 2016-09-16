@@ -9,24 +9,25 @@ import UIKit
 
 public extension UIImage
 {
-    public func pickColor(fromPoint point: CGPoint) -> UIColor
+    public func pickColor(at point: CGPoint) -> UIColor
     {
-        guard let CGImage: CGImageRef = self.CGImage else {
-            return UIColor.blackColor()
+        guard let cgImage = self.cgImage else {
+            
+            return UIColor.black
         }
         
-        var color: UIColor = UIColor.blackColor()
+        var color = UIColor.black
         
-        let width: Int = CGImageGetWidth(CGImage)
-        let height: Int = CGImageGetHeight(CGImage)
+        let width: Int = cgImage.width
+        let height: Int = cgImage.height
         
         let x: Int = Int(floor(point.x) * self.scale)
         let y: Int = Int(floor(point.y) * self.scale)
         
         if (x < width) && (y < height) {
-            let provider: CGDataProviderRef = CGImageGetDataProvider(CGImage)!
+            let provider: CGDataProvider = cgImage.dataProvider!
             
-            if let bitmapData: CFDataRef = CGDataProviderCopyData(provider) {
+            if let bitmapData: CFData = provider.data {
                 let data: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmapData)
                 
                 let offset: Int = ((width * y) + x) * 4
@@ -43,7 +44,7 @@ public extension UIImage
         return color
     }
     
-    public func convertPoint(point: CGPoint, fromImageView imageView: UIImageView) -> CGPoint
+    public func convertPoint(_ point: CGPoint, from imageView: UIImageView) -> CGPoint
     {
         var imagePoint: CGPoint = point
         
@@ -56,17 +57,21 @@ public extension UIImage
         let contentMode: UIViewContentMode = imageView.contentMode
         
         switch contentMode {
-        case .ScaleToFill, .Redraw:
+        case .scaleToFill, .redraw:
             imagePoint.x /= ratioX
             imagePoint.y /= ratioY
             break
             
-        case .ScaleAspectFill, .ScaleAspectFit:
+        case .scaleAspectFill, .scaleAspectFit:
             var scale: CGFloat = 0
             
-            if case .ScaleAspectFit = contentMode {
+            if case .scaleAspectFit = contentMode {
+                
                 scale = min(ratioX, ratioY)
-            } else if case .ScaleAspectFill = contentMode {
+            }
+            
+            if case .scaleAspectFill = contentMode {
+                
                 scale = max(ratioX, ratioY)
             }
             
@@ -78,38 +83,38 @@ public extension UIImage
             
             break
             
-        case .Center:
+        case .center:
             imagePoint.x -= (viewSize.width - imageSize.width)  / 2.0
             imagePoint.y -= (viewSize.height - imageSize.height) / 2.0
             break
             
-        case .Top:
+        case .top:
             imagePoint.x -= (viewSize.width - imageSize.width)  / 2.0
             break
             
-        case .Bottom:
+        case .bottom:
             imagePoint.x -= (viewSize.width - imageSize.width)  / 2.0
             imagePoint.y -= (viewSize.height - imageSize.height)
             break
             
-        case .Left:
+        case .left:
             imagePoint.y -= (viewSize.height - imageSize.height) / 2.0
             break
             
-        case .Right:
+        case .right:
             imagePoint.x -= (viewSize.width - imageSize.width)
             imagePoint.y -= (viewSize.height - imageSize.height) / 2.0
             break
             
-        case .TopRight:
+        case .topRight:
             imagePoint.x -= (viewSize.width - imageSize.width)
             break
             
-        case .BottomLeft:
+        case .bottomLeft:
             imagePoint.y -= (viewSize.height - imageSize.height)
             break
             
-        case .BottomRight:
+        case .bottomRight:
             imagePoint.x -= (viewSize.width - imageSize.width)
             imagePoint.y -= (viewSize.height - imageSize.height)
             break
